@@ -1,7 +1,7 @@
 require 'rest-client'
 
 def news_api_key
-    ENV["NEWS_API_KEY"]
+    ENV["news_api_key"]
 end
 
 def news_dataset

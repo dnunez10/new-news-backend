@@ -1,6 +1,5 @@
 require 'rest-client'
 
-# NEWS_API_KEY = ENV['news_api_key']
 def news_api_key
     ENV["NEWS_API_KEY"]
 end
@@ -15,15 +14,3 @@ def news_dataset
 end
 news_dataset()
 # byebug
-
-    # response = RestClient.get 'https://newsapi.org/v2/everything?q=a&apiKey=NEWS_API_KEY'
-    # byebug
-    # json = JSON.parse response
-
-    # if !json.nil?
-    #     json["data"].map do |article|
-    #         Article.create(title:)
-    #     end
-    # else
-    # puts "error seeding"
-    # end

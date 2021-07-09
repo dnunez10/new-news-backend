@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :users
       post '/login', to: 'users#login'
       get '/profile', to: 'users#profile'
-      post '/my_list', to: 'reading_list#my_list'
+      # post '/my_list', to: 'article_readings#my_list'
     end
   end
 

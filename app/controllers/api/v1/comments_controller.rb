@@ -5,10 +5,15 @@ class Api::V1::CommentsController < ApplicationController
         render json: comments
     end
 
+    def show
+        comment = Comment.find(params[:id])
+        render json: comment
+    end
+
     def create
-        comment = Comment.new(user_id: current_user.id, comment: params[:name], article_id: params[:article_id])
+        comment = Comment.new(user_id: current_user.id, comment: params[:comment], article_id: params[:article_id])
         if comment.save
-            render json: {user: UserSerializer.new(current_user)} 
+            render json: {comment: CommentSerializer.new(comment)} 
         else
             render json: comment.errors
         end

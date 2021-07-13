@@ -18,7 +18,7 @@ class Api::V1::ReadingListsController < ApplicationController
     # end
 
     def create
-        reading_list = ReadingList.new(user_id: current_user.id, article_id: params[:article_id], name: params[:name])
+        reading_list = ReadingList.new(user_id: current_user.id, name: params[:name])
         if reading_list.save
             render json: {reading_list: ReadingListSerializer.new(current_user)}
         else

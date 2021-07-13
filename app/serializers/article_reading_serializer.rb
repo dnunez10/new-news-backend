@@ -1,5 +1,5 @@
 class ArticleReadingSerializer < ActiveModel::Serializer
-  attributes :id, :references, :references
+  attributes :id, :reading_list_id, :article_id
   belongs_to :article 
   belongs_to :reading_list
 end
